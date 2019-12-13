@@ -3,6 +3,8 @@ kind: Middleware
 metadata:
   name: {{ template "traefik.fullname" . }}-dashboard-auth
   namespace: {{ .Release.Namespace }}
+  annotations:
+    kubernetes.io/ingress.class: "traefik-v2"
 spec:
   digestAuth:
     secret: {{ template "traefik.fullname" . }}-dashboard-users

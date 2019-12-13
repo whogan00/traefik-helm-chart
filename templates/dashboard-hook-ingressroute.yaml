@@ -5,6 +5,7 @@ metadata:
   name: {{ template "traefik.fullname" . }}-dashboard
   annotations:
     helm.sh/hook: "post-install"
+    kubernetes.io/ingress.class: "traefik-v2"
   labels:
     app: {{ template "traefik.name" . }}
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
@@ -14,7 +15,7 @@ spec:
   entryPoints:
     - web
   routes:
-  - match: PathPrefix(`/dashboard`) || PathPrefix(`/api`)
+  - match: Host(`traefikv2.do.nerdspeak.com`) && PathPrefix(`/dashboard`) || PathPrefix(`/api`)
     kind: Rule
     services:
     - name: api@internal
