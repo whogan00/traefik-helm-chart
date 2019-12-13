@@ -8,3 +8,4 @@ metadata:
 spec:
   digestAuth:
     secret: {{ template "traefik.fullname" . }}-dashboard-users
+    realm: traefik
