@@ -1,0 +1,8 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: {{ template "traefik.fullname" . }}-dashboard-auth
+  namespace: {{ .Release.Namespace }}
+spec:
+  digestAuth:
+    secret: {{ template "traefik.fullname" . }}-dashboard-users
