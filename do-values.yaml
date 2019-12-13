@@ -3,7 +3,7 @@ additionalArguments:
   - --providers.kubernetesingress.ingressclass=traefik-v2
   - --providers.kubernetescrd.ingressclass=traefik-v2
   - --certificatesResolvers.default.acme.email=web-info@attrib.net
-  - --certificatesResolvers.default.acme.storage=/storage/acme.json
+  - --certificatesResolvers.default.acme.storage=/acme.json
   - --certificatesResolvers.default.acme.dnsChallenge=true
   - --certificatesResolvers.default.acme.dnsChallenge.provider=digitalocean
 
