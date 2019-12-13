@@ -1,0 +1,9 @@
+additionalArguments:
+  - "--providers.kubernetesingress=true"
+  - "--providers.kubernetesingress.ingressclass=traefik-v2"
+  - "--providers.kubernetescrd.ingressclass=traefik-v2"
+  - "--providers.kubernetesingress.ingressendpoint.publishedservice={{ template "traefik.fullname" . }}"
+  - "--certificatesResolvers.default.acme.email=web-info@attrib.net"
+  - "--certificatesResolvers.default.acme.storage=/storage/acme.json"
+  - "--certificatesResolvers.default.acme.dnsChallenge=true"
+  - "--certificatesResolvers.default.acme.dnsChallenge.provider=digitalocean"
