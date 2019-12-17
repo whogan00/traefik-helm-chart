@@ -15,11 +15,9 @@ spec:
   entryPoints:
     - web
   routes:
-  - match: Host(`traefikv2.do.nerdspeak.com`) && PathPrefix(`/dashboard`) || PathPrefix(`/api`)
+  - match: Host(`traefik-v2.do.nerdspeak.com`) && PathPrefix(`/dashboard`) || PathPrefix(`/api`)
     kind: Rule
     services:
     - name: api@internal
       kind: TraefikService
-    middlewares:
-    - name: {{ template "traefik.fullname" . }}-dashboard-auth
 {{- end -}}
