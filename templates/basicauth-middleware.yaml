@@ -7,4 +7,4 @@ metadata:
     kubernetes.io/ingress.class: "traefik-v2"
 spec:
   basicAuth:
-    secret: {{ template "traefik.fullname" . }}-dashboard-users
+    secret: dashboard-users

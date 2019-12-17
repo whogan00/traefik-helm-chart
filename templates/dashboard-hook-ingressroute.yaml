@@ -21,4 +21,6 @@ spec:
     services:
     - name: api@internal
       kind: TraefikService
+    middlewares:
+      - name: {{ template "traefik.fullname" . }}-dashboard-auth
 {{- end -}}
