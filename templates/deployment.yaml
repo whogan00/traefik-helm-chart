@@ -88,7 +88,7 @@ spec:
           {{- end }}
           {{- end }}
           {{- if .Values.publishedService.enabled }}
-          - "--providers.kubernetesingress.ingressendpoint.publishedservice={{ template "traefik.fullname" . }}"
+          - "--providers.kubernetesingress.ingressendpoint.publishedservice={{ .Release.Namespace}}/{{ template "traefik.fullname" . }}"
           {{- end }}
         envFrom:
         - secretRef:
