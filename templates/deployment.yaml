@@ -90,3 +90,6 @@ spec:
           {{- if .Values.publishedService.enabled }}
           - "--providers.kubernetesingress.ingressendpoint.publishedservice={{ template "traefik.fullname" . }}"
           {{- end }}
+        envFrom:
+        - secretRef:
+            name: {{ template "traefik.fullname" . }}-do-token
